@@ -1,4 +1,3 @@
-
 # Created by Md.Abdullah Al Mamun
 # Project: HyperNews Portal
 # File: urls.py
@@ -23,11 +22,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 
 urlpatterns = [
     path('', views.index),
+    path('news/', views.news),
+    re_path(r"news/(?P<id>\d+)/$", views.ArticelDetails)
 ]
