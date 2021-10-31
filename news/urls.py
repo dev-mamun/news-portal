@@ -25,9 +25,11 @@ Including another URLconf
 from django.urls import path, re_path
 from . import views
 
-
 urlpatterns = [
     path('', views.index),
-    path('news/', views.news),
-    re_path(r"news/(?P<id>\d+)/$", views.ArticelDetails)
+    path('news/', views.News.as_view(), name='news index'),
+    path("news/<int:link>/", views.NewsDetails.as_view(), name='news by link')
+
+    # path('news/', views.NewsIndex.as_view(), name='news index'),
+    # path("news/<int:link>/", views.NewsView.as_view(), name='news by link'),
 ]

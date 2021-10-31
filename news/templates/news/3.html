@@ -1,0 +1,8 @@
+{% extends "news\\base.html" %}
+{% block content %}
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.created }}</p>
+    <p>{{ item.text }}</p>
+    <a href="/news/">Back to news</a>
+{{ block.super }}
+{% endblock %}

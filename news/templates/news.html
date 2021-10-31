@@ -1,6 +1,5 @@
-{% extends "news\\base.html" %}
+{% extends "base.html" %}
 {% block content %}
-
 <h2>Hyper news</h2>
 {% for date, values in dates.items %}
 <h4>{{ date }}</h4>
@@ -10,4 +9,6 @@
 {% endfor %}
 </ul>
 {% endfor %}
+<a href="/news/create/">Create news</a>
+{{ block.super }}
 {% endblock %}
